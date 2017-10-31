@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<div class="home">
+	<section>
+		<h2 class="smallcap">about</h2>
+		<p>Blog about something.</p>
+
+        <p>GitHub:  <a href="https://github.com/DerShokus">DerShokus</a><br/>Theme: <a href="https://github.com/syaning/slim">slim</a></p>
+
+		<h2 class="smallcap">links:</h2>
+        <p><a href="https://godbolt.org/">Compiler Explorer</a><br/><a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3797.pdf">C++ Standard Draft N3797</a></p>
+
+	</section>
+	<section>
+		<h2 class="smallcap">posts</h2>
+		<ul class="post-list">
+			{% for post in site.posts limit:5 %}
+			<li>
+				<time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
+				<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+			</li>
+			{% endfor %}
+		</ul>
+		<p><a href="{{ "/archives/" | prepend: site.baseurl }}">view more...</a></p>
+	</section>
+</div>
