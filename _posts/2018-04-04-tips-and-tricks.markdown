@@ -24,7 +24,7 @@ class Serializer {
     uint8_t buffer[...];
 };
 
-// Неинтрузивно (функциональность снаруже)
+// Неинтрузивно (функциональность снаружи)
 class Serializer {
     template <class T>
     void write(const T& object) {
